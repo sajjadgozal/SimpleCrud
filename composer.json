@@ -1,0 +1,18 @@
+{
+    "name": "sajjadgozal/simple-crud",
+    "description": "add simple vies of crud based apps",
+    "type": "project",
+    "authors": [
+        {
+            "name": "sajjadgozalzadeh",
+            "email": "sajjad.gozalzadeh@picasso.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Wisdmlabs\\Todolist\\": "src/"
+        }
+    }
+}
+
