@@ -1,5 +1,5 @@
 {
-    "name": "sajjadgozal/simple-crud",
+    "name": "sajjadgozal/SimpleCrud",
     "description": "add simple vies of crud based apps",
     "type": "project",
     "authors": [
@@ -11,13 +11,13 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "sajjadgozal\\simple-crud\\": "src/"
+            "sajjadgozal\\SimpleCrud\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "sajjadgozal\\simple-crud\\src\\SimpleCrudServiceProvider"
+                "sajjadgozal\\SimpleCrud\\SimpleCrudServiceProvider"
             ]
         }
     }
