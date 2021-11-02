@@ -1,6 +1,6 @@
 <?php
 
-namespace sajjadgozal;
+namespace sajjadgozal\SimpleCrud;
 
 use Illuminate\Support\ServiceProvider;
 
