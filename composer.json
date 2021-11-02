@@ -13,6 +13,13 @@
         "psr-4": {
             "Wisdmlabs\\Todolist\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "sajjadgozal\\simple-crud\\SimpleCrudServiceProvider"
+            ]
+        }
     }
 }
 
