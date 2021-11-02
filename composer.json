@@ -17,7 +17,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "sajjadgozal\\SimpleCrudServiceProvider"
+                "sajjadgozal\\simple-crud\\src\\SimpleCrudServiceProvider"
             ]
         }
     }
