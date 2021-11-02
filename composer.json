@@ -11,7 +11,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Wisdmlabs\\Todolist\\": "src/"
+            "sajjadgozal\\simple-crud\\": "src/"
         }
     },
     "extra": {
