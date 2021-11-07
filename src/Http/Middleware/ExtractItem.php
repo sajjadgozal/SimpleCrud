@@ -1,10 +1,10 @@
 <?php
 
-namespace  Sajjadgozal\SimpleCrud\Http\Middleware;
+namespace sajjadgozal\SimpleCrud\Http\Middleware;
 
 use Closure;
 use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;
-use Sajjadgozal\SimpleCrud\service\Resolve;
+use sajjadgozal\SimpleCrud\service\Resolve;
 
 class ExtractItem extends Middleware
 {

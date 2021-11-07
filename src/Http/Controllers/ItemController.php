@@ -1,6 +1,6 @@
 <?php
 
-namespace Sajjadgozal\SimpleCrud\Http\Controllers;
+namespace sajjadgozal\SimpleCrud\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

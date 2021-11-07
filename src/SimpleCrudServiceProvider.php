@@ -1,6 +1,6 @@
 <?php
 
-namespace Sajjadgozal\SimpleCrud ;
+namespace sajjadgozal\SimpleCrud ;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

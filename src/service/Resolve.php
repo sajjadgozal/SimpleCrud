@@ -1,6 +1,6 @@
 <?php
 
-namespace Sajjadgozal\SimpleCrud\service;
+namespace sajjadgozal\SimpleCrud\service;
 
 class Resolve {
 

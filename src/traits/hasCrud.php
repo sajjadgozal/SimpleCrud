@@ -1,6 +1,6 @@
 <?php
 
-namespace Sajjadgozal\SimpleCrud\traits;
+namespace sajjadgozal\SimpleCrud\traits;
 
 trait hasCrud {
     public $hasCrud = true;

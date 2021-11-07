@@ -1,6 +1,6 @@
 <?php
 
-namespace Sajjadgozal\SimpleCrud\Models;
+namespace sajjadgozal\SimpleCrud\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
