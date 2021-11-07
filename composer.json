@@ -1,7 +1,8 @@
 {
     "name": "sajjadgozal/simple-crud",
     "description": "add simple vies of crud based apps",
-    "type": "project",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "sajjadgozalzadeh",
@@ -21,5 +22,6 @@
             ]
         }
     }
+
 }
 
