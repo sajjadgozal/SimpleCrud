@@ -9,10 +9,14 @@
             "email": "sajjad.gozalzadeh@picasso.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
             "sajjadgozal\\SimpleCrud\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "sajjadgozal\\SimpleCrud\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -21,7 +25,8 @@
                 "sajjadgozal\\SimpleCrud\\SimpleCrudServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
-
 }
-
