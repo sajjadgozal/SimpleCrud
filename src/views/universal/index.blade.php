@@ -16,7 +16,7 @@
     </div>
 
     <div class="container">
-        @isset($items)
+        @if(!$items->isEmpty() )
             <table class="table">
                 <tr>
                     @foreach($items[0]->getFillable() as $fillable)
@@ -31,6 +31,8 @@
                     </tr>
                 @endforeach
             </table>
+        @else
+            <span>There is no Item</span>
         @endif
     </div>
 
