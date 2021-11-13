@@ -14,6 +14,7 @@ Route::group(['middleware' => ExtractItem::class ],function () {
     Route::get($prefix.'/{item_name}/{id}',[ItemController::class,'show'])->name('crudShow');
     Route::get($prefix.'/{item_name}/{id}/edit',[ItemController::class,'edit'])->name('crudEdit');
     Route::patch($prefix.'/{item_name}/{id}',[ItemController::class,'update'])->name('crudUpdate');
+    Route::delete($prefix.'/{item_name}/{id}',[ItemController::class,'destroy'])->name('crudDelete');
 
 });
 

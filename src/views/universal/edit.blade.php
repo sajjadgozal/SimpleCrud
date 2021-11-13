@@ -16,6 +16,9 @@
 </div>
 
 <div class="container">
+
+    <a href="{{ route('crudIndex',[ 'item_name'=>class_basename($item) ]) }}">List of  {{ class_basename($item) }}</a>
+
     <form action={{route('crudUpdate',[ 'item_name'=>class_basename($item), 'id'=>$item['id'] ]) }} method='post'>
         @csrf
         @method('PATCH')

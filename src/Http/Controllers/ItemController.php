@@ -26,7 +26,8 @@ class ItemController extends Controller
 
         return view($view, [
             'title' => $title,
-            'items' => $items
+            'items' => $items,
+            'class_name' => $class_name
         ]);
     }
 

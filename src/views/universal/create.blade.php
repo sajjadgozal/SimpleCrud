@@ -16,6 +16,9 @@
 </div>
 
 <div class="container">
+
+    <a href="{{ route('crudIndex',[ 'item_name'=>class_basename($model) ]) }}">List of  {{ class_basename($model) }}</a>
+
     <form action={{route('crudStore',['item_name'=>class_basename($model)])}} method='post'>
         @csrf
         @method('POST')

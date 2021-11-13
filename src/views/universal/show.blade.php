@@ -16,6 +16,10 @@
 </div>
 
 <div class="container">
+
+    <a href="{{ route('crudIndex',[ 'item_name'=>class_basename($item) ]) }}">List of  {{ class_basename($item) }}</a>
+
+
     @foreach($item->getFillable() as $fillable)
         <div>
             <span>{{$fillable}} : </span>

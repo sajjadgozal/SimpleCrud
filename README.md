@@ -1,7 +1,7 @@
 # simple-crud
 add simple vies of crud based apps 
 
-# install
+## install
 
 install with command :
 
@@ -16,9 +16,10 @@ for publishing views and config :
 php artisan vendor:publish --tag=sajjadgozal\SimpleCrud\SimpleCrudServiceProvider
 ```
 
-# Uesage
+## Uesage
 
-add hasCrud trait to model to enable croud routes and views for that model.
+Add hasCrud trait to model to enable croud routes and views for that model. 
+And dont forget to add fillable variables.
 
 Category model : 
 
@@ -33,6 +34,9 @@ use sajjadgozal\SimpleCrud\traits\hasCrud;
 class Category extends Model
 {
     use hasCrud;
+
+    protected fillable = [] ;
+    
 }
 
 ```
@@ -53,7 +57,7 @@ example:
     
 ```
 
-# Configuration
+## Configuration
 
 route prefix can be changed from config/simplecrud.php file. 
 
@@ -69,3 +73,9 @@ or
 ```php
     'route_prefix' => 'custom_prefix',
 ```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
