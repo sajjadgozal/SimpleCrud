@@ -18,8 +18,9 @@ class ItemController extends Controller
         $title = 'List of '. $class_name;
         $items = $request->model::all();
 
-        if (view()->exists($class_name.'index')) {
-            $view = 'sg::'.$class_name.'index';
+        if (view()->exists($class_name.'.index')
+            || view()->exists(strtolower( $class_name).'.index')) {
+            $view = $class_name.'.index';
         } else {
             $view = 'sg::universal.index';
         }
@@ -43,8 +44,9 @@ class ItemController extends Controller
         $title = 'Create '.$class_name;
         $model = $request->model;
 
-        if (view()->exists($class_name.'create')) {
-            $view = 'sg::'.$class_name.'create';
+        if (view()->exists($class_name.'.create')
+            || view()->exists(strtolower( $class_name).'.create')) {
+            $view = $class_name.'.create';
         } else {
             $view = 'sg::universal.create';
         }
@@ -79,9 +81,9 @@ class ItemController extends Controller
         $class_name = class_basename($request->model);
         $title = 'Show '.$class_name;
         $item = $request->item;
-
-        if (view()->exists($class_name.'show')) {
-            $view = 'sg::'.$class_name.'show';
+        if (view()->exists($class_name.'.show')
+        || view()->exists(strtolower( $class_name).'.show')) {
+            $view = $class_name.'.show';
         } else {
             $view = 'sg::universal.show';
         }
@@ -105,8 +107,9 @@ class ItemController extends Controller
         $title = 'Edit '.$class_name;
         $item = $request->item;
 
-        if (view()->exists($class_name.'edit')) {
-            $view = 'sg::'.$class_name.'edit';
+        if (view()->exists($class_name.'.edit')
+            || view()->exists(strtolower( $class_name).'.edit')) {
+            $view = $class_name.'.edit';
         } else {
             $view = 'sg::universal.edit';
         }

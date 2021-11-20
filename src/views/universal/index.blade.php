@@ -22,6 +22,7 @@
         @if(!$items->isEmpty() )
             <table class="table">
                 <tr>
+                    <th>id</th>
                     @foreach($items[0]->getFillable() as $fillable)
                         <th>{{$fillable}}</th>
                     @endforeach
@@ -29,6 +30,9 @@
                 </tr>
                 @foreach($items as $item)
                     <tr>
+                        @isset($item->id)
+                            <td>{{$item->id}}</td>
+                        @endisset
                         @foreach($item->getFillable() as $fillable)
                             @if ($loop->first)
                                 <td>
@@ -37,7 +41,6 @@
                             @else
                                 <td>{{$item[$fillable]}}</td>
                             @endif
-
                         @endforeach
                         <td>
                             <a href="{{ route('crudEdit',[ 'item_name'=>$class_name , 'id'=>$item['id'] ]) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
