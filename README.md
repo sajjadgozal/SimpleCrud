@@ -74,6 +74,19 @@ or
     'route_prefix' => 'custom_prefix',
 ```
 
+## Views 
+By default, package will use view files in universal folder.
+you can add view files with names:
+"index.blade.php","show.blade.php","create.blade.php","edit.blade.php" 
+in the folder with model name in resources/views/ folder.
+
+example:
+```bash
+    resources/views/category/show.blade.php
+```
+
+## api 
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
