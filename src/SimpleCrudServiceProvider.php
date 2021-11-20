@@ -16,6 +16,7 @@ class SimpleCrudServiceProvider extends ServiceProvider{
             __DIR__ . '/config/simple_crud.php', 'simple_crud'
         );
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'sg');
 

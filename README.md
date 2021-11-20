@@ -74,6 +74,11 @@ or
     'route_prefix' => 'custom_prefix',
 ```
 
+api prefix can be changed from config/simplecrud.php file.
+```php
+    'api_route_prefix'=>'crud-api',
+```
+
 ## Views 
 By default, package will use view files in universal folder.
 you can add view files with names:
@@ -86,6 +91,16 @@ example:
 ```
 
 ## api 
+api routes are returning json  
+
+```bash
+    {{app_address}}/{{api-prefix}}/{{model_name}} 
+```
+
+example:
+```bash
+    http://127.0.0.1:8000/crud-api/category
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
