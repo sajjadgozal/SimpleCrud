@@ -90,6 +90,35 @@ example:
     resources/views/category/show.blade.php
 ```
 
+## Validation 
+
+for  ading validation rules for model , add parameter rules to the model.
+like as laravel validation rules.
+
+examole: 
+```php
+
+class Item extends Model
+{
+    use hasCrud;
+
+    protected $fillable =[
+        'name',
+        'number'
+    ];
+    
+    /**
+     *  Get the validation rules that apply to the request.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name' => 'required|string',
+        'number' => 'sometimes|numeric'
+    ];
+}
+```
+
 ## api 
 api routes are returning json  
 
