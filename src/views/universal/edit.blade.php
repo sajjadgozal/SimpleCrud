@@ -19,6 +19,16 @@
 
     <a href="{{ route('crudIndex',[ 'item_name'=>class_basename($item) ]) }}">List of  {{ class_basename($item) }}</a>
 
+    @isset($errors)
+        @if ($errors->any())
+            <ul class="mt-3 list-disc list-inside text-sm text-red-600">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+    @endisset
+
     <form action={{route('crudUpdate',[ 'item_name'=>class_basename($item), 'id'=>$item['id'] ]) }} method='post'>
         @csrf
         @method('PATCH')

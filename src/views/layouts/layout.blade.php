@@ -12,8 +12,6 @@
           Title
     </div>
 
-
-
     @yield('content')
 </body>
 </html>

@@ -26,24 +26,6 @@ class ItemController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function create(Request $request)
-    {
-        $class_name = class_basename($request->model);
-        $title = 'Create '.$class_name;
-        $model = $request->model;
-
-        return response()->json([
-            'title' => $title,
-            'model' => $model
-        ],200);
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -75,24 +57,6 @@ class ItemController extends Controller
             'item' => $item
         ],200);
 
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Item  $item
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function edit(Request $request)
-    {
-        $class_name = class_basename($request->model);
-        $title = 'Edit '.$class_name;
-        $item = $request->item;
-
-        return response()->json([
-            'title' => $title,
-            'item' => $item
-        ],200);
     }
 
     /**

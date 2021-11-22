@@ -2,9 +2,11 @@
 
 use sajjadgozal\SimpleCrud\Http\Controllers\ItemController;
 use sajjadgozal\SimpleCrud\Http\Middleware\ExtractItem;
+use sajjadgozal\SimpleCrud\Http\Middleware\ExtractModel;
 
 
-Route::group(['middleware' => ExtractItem::class ],function () {
+Route::group(
+    ['middleware' => ['web' ,ExtractModel::class , ExtractItem::class ] ],function () {
 
     $prefix = '/'.config('simple_crud.route_prefix');
 

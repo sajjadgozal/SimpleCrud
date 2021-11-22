@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;
 use sajjadgozal\SimpleCrud\service\Resolve;
 
-class ExtractItem extends Middleware
+class ExtractModel extends Middleware
 {
 
     /**
@@ -27,18 +27,15 @@ class ExtractItem extends Middleware
     public function handle($request, Closure $next)
     {
 
-        if (! $request->model->hasCrud) {
-            return abort(404,'model not connected to simple crud package');
+        $model = Resolve::modelName($request->item_name);
+
+        if (! $model) {
+            return abort(404,'model does not exist');
         }
 
-        if($request->id) {
-            $item = Resolve::getItemById($request->model ,$request->id);
-            $request->item = $item;
+        $request->model = $model;
 
-            if(! $item) {
-                return abort(404,'item does not exist');
-            }
-        }
+        $request->attributes->add(['model' => $model]);
 
         return $next($request);
     }

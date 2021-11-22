@@ -4,6 +4,7 @@ namespace sajjadgozal\SimpleCrud\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use sajjadgozal\SimpleCrud\Http\Requests\StoreItemRequest;
 
 class ItemController extends Controller
 {
@@ -50,7 +51,7 @@ class ItemController extends Controller
         } else {
             $view = 'sg::universal.create';
         }
-
+        
         return view($view, [
             'title' => $title,
             'model' => $model
@@ -64,8 +65,9 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StoreItemRequest $request)
     {
+        dd($request->validated());
         $request->model->create($request->all());
         return redirect()->back();
     }

@@ -19,12 +19,22 @@
 
     <a href="{{ route('crudIndex',[ 'item_name'=>class_basename($model) ]) }}">List of  {{ class_basename($model) }}</a>
 
+    @if ($errors->any())
+        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
     <form action={{route('crudStore',['item_name'=>class_basename($model)])}} method='post'>
         @csrf
         @method('POST')
         @foreach($model->getFillable() as $fillable)
             <label for={{$fillable}}>{{$fillable}}</label>
+
             <input type="text" name={{$fillable}} value="{{ old($fillable) }}" >
+
             <br>
         @endforeach
         <input type="submit">
