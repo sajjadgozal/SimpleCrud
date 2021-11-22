@@ -34,8 +34,17 @@
         @method('PATCH')
         @foreach($item->getFillable() as $fillable)
             <label for={{$fillable}}>{{$fillable}}</label>
-            <input type="text" name={{ $fillable }} value="{{ $item[$fillable] }}" >
+
+            @if(in_array('string', explode('|', $item->rules[$fillable])))
+                <input type="text" name={{$fillable}} value="{{ $item[$fillable] }}" >
+            @elseif(in_array('numeric', explode('|', $item->rules[$fillable])))
+                <input type="number" name={{$fillable}} value="{{ $item[$fillable] }}" >
+            @elseif(in_array('text', explode('|', $item->rules[$fillable])))
+                <textarea name={{$fillable}} cols="30" rows="10">{{ $item[$fillable] }}</textarea>
+            @endif
+
             <br>
+
         @endforeach
         <input type="submit">
     </form>

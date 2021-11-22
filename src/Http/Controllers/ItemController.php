@@ -15,8 +15,12 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-        $class_name = class_basename($request->model);
+        $model = $request->attributes->get('model');
+
+        $class_name = class_basename($model);
+
         $title = 'List of '. $class_name;
+
         $items = $request->model::all();
 
         if (view()->exists($class_name.'.index')
@@ -41,9 +45,11 @@ class ItemController extends Controller
      */
     public function create(Request $request)
     {
-        $class_name = class_basename($request->model);
+        $model = $request->attributes->get('model');
+
+        $class_name = class_basename($model);
+
         $title = 'Create '.$class_name;
-        $model = $request->model;
 
         if (view()->exists($class_name.'.create')
             || view()->exists(strtolower( $class_name).'.create')) {
@@ -67,8 +73,10 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        dd($request->validated());
-        $request->model->create($request->all());
+        $model = $request->attributes->get('model');
+
+        $model->create($request->all());
+
         return redirect()->back();
     }
 
@@ -80,8 +88,12 @@ class ItemController extends Controller
      */
     public function show(Request $request)
     {
-        $class_name = class_basename($request->model);
+        $model = $request->attributes->get('model');
+
+        $class_name = class_basename($model);
+
         $title = 'Show '.$class_name;
+
         $item = $request->item;
         if (view()->exists($class_name.'.show')
         || view()->exists(strtolower( $class_name).'.show')) {
@@ -105,7 +117,10 @@ class ItemController extends Controller
      */
     public function edit(Request $request)
     {
-        $class_name = class_basename($request->model);
+        $model = $request->attributes->get('model');
+
+        $class_name = class_basename($model);
+
         $title = 'Edit '.$class_name;
         $item = $request->item;
 

@@ -97,7 +97,6 @@ like as laravel validation rules.
 
 examole: 
 ```php
-
 class Item extends Model
 {
     use hasCrud;

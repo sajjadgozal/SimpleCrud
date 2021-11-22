@@ -31,9 +31,16 @@
         @csrf
         @method('POST')
         @foreach($model->getFillable() as $fillable)
+
             <label for={{$fillable}}>{{$fillable}}</label>
 
-            <input type="text" name={{$fillable}} value="{{ old($fillable) }}" >
+            @if(in_array('string', explode('|', $model->rules[$fillable])))
+                <input type="text" name={{$fillable}} value="{{ old($fillable) }}" >
+            @elseif(in_array('numeric', explode('|', $model->rules[$fillable])))
+                <input type="number" name={{$fillable}} value="{{ old($fillable) }}" >
+            @elseif(in_array('text', explode('|', $model->rules[$fillable])))
+                <textarea name={{$fillable}} cols="30" rows="10">{{ old($fillable) }}</textarea>
+            @endif
 
             <br>
         @endforeach
